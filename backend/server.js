@@ -5,13 +5,12 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-// Security middleware
 app.use(helmet());
 
-// CORS configuration
 app.use(
   cors({
     origin:
@@ -19,7 +18,6 @@ app.use(
   })
 );
 
-// Body parser
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -40,6 +38,9 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+// Authentication routes
+app.use("/api/auth", authRoutes);
+
 // Route not found
 app.use((req, res) => {
   res.status(404).json({
@@ -52,16 +53,23 @@ app.use((req, res) => {
 app.use((error, req, res, next) => {
   console.error(error.message);
 
-  res.status(500).json({
+  res.status(error.status === 400 ? 400 : 500).json({
     success: false,
-    message: "Internal server error"
+    message:
+      error.status === 400
+        ? "Invalid request"
+        : "Internal server error"
   });
 });
 
 const PORT = process.env.PORT || 5001;
 
-// Start server
 const startServer = async () => {
+  if (!process.env.JWT_SECRET) {
+    console.error("JWT_SECRET is missing");
+    process.exit(1);
+  }
+
   await connectDB();
 
   app.listen(PORT, () => {
