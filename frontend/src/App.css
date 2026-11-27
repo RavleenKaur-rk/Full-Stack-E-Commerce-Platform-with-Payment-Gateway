@@ -1,0 +1,613 @@
+
+/* VELORA — LUXURY EDITORIAL */
+
+:root {
+  --ivory: #faf9f6;
+  --cream: #f2eee8;
+  --black: #242320;
+  --muted: #77736e;
+  --accent: #9c8774;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 23, 21, 0.62),
+      rgba(24, 23, 21, 0.05)
+    ),
+    url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800&auto=format&fit=crop")
+    center 35% / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 5.2vw, 76px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 25px 0;
+}
+
+.hero p {
+  max-width: 380px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #e8e5df;
+}
+
+.hero-button {
+  display: inline-block;
+  background: var(--ivory);
+  color: var(--black);
+  padding: 18px 32px;
+  margin-top: 30px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: var(--black);
+  color: white;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 100px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-heading h2,
+.editorial-content h2,
+.brand-statement h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.section-heading h2 {
+  font-size: clamp(34px, 4vw, 50px);
+  margin: 16px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CATEGORIES */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.category-image {
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.category-image img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.category-card:hover img,
+.product-card:hover img {
+  transform: scale(1.045);
+}
+
+.category-card h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 18px 0 10px;
+}
+
+.category-card span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 5px;
+}
+
+.outline-button:hover {
+  background: var(--black);
+  color: white;
+}
+
+/* BRAND */
+
+.brand-statement {
+  text-align: center;
+  background: #eae5dd;
+  padding: 110px 20px;
+}
+
+.brand-statement h2 {
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.3;
+}
+
+.brand-statement p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--black);
+  color: white;
+  padding: 65px 7% 25px;
+}
+
+.footer h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.footer p {
+  color: #b8b3ad;
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 35px 0 60px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.copyright {
+  border-top: 1px solid #484541;
+  padding-top: 25px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-image img {
+    height: 350px;
+  }
+
+  .product-image img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 560px;
+    height: 70vh;
+    padding: 8%;
+  }
+
+  .section {
+    padding: 65px 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    gap: 12px;
+  }
+
+  .product-image img {
+    height: 230px;
+  }
+
+  .category-image img {
+    height: 420px;
+  }
+
+  .brand-statement {
+    padding: 75px 20px;
+  }
+}
+
+.category-card {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card img {
+  display: block;
+  width: 100%;
+  transition: transform 0.7s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.055);
+}
+
+.category-card h3 {
+  transition: letter-spacing 0.3s ease;
+}
+
+.category-card:hover h3 {
+  letter-spacing: 1.5px;
+}
+
+
+
+
+/* LUXURY COLLECTION FEATURE */
+
+.collection-feature {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 580px;
+  background: #f0ece6;
+}
+
+.collection-feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 12%;
+}
+
+.collection-feature-content .eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 28px;
+}
+
+.collection-feature-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 5vw, 78px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin: 0 0 28px;
+  color: #24221f;
+}
+
+.collection-feature-content p {
+  max-width: 340px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #716b65;
+  margin: 0 0 36px;
+}
+
+.collection-feature-link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #292723;
+  color: #292723;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.collection-feature-link:hover {
+  gap: 40px;
+}
+
+.collection-feature-image {
+  min-height: 580px;
+  overflow: hidden;
+}
+
+.collection-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.collection-feature-image:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .collection-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-feature-content {
+    padding: 65px 8%;
+  }
+
+  .collection-feature-content h2 {
+    font-size: 54px;
+  }
+
+  .collection-feature-image {
+    min-height: 400px;
+    height: 400px;
+  }
+}
+
+
+
+
+
+
+/* CATEGORY HOVER EFFECT */
+
+.category-card {
+  overflow: hidden;
+}
+
+.category-image {
+  overflow: hidden;
+}
+
+.category-image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.7s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.055);
+}
+
+
+
+
+
+/* VELORA LUXURY HERO CAROUSEL */
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 780px;
+  overflow: hidden;
+  background: #292725;
+  padding: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero-carousel .hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(680px, 90%);
+  margin-left: 8%;
+  padding: 0;
+  color: #fff;
+}
+
+.hero-carousel .hero-content h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 1.12;
+  color: #fff;
+  margin: 30px 0;
+}
+
+.hero-carousel .hero-content p {
+  max-width: 440px;
+  color: #f2f0ed;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-dot.active {
+  background: #fff;
+  width: 28px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 650px;
+  }
+
+  .hero-carousel .hero-content {
+    margin-left: 6%;
+  }
+
+  .hero-carousel .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-slide {
+    background-position: center;
+  }
+}
+
+
+
+/* CENTERED ABOUT VELORA */
+
+.about-velora {
+  width: 100%;
+  background: #eeeae4;
+  padding: 110px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-velora-content {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-velora .eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #77716a;
+  margin-bottom: 30px;
+}
+
+.about-velora-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #252321;
+  margin: 0 0 25px;
+}
+
+.about-velora-content .about-intro {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-style: italic;
+  color: #6e655c;
+  margin: 0 0 25px;
+}
+
+.about-velora-content .about-description {
+  font-size: 16px;
+  line-height: 2;
+  color: #706b65;
+  max-width: 680px;
+  margin: 0 0 35px;
+}
+
+.about-velora-link {
+  display: inline-block;
+  color: #252321;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-bottom: 1px solid #252321;
+  padding-bottom: 12px;
+  transition: opacity 0.3s;
+}
+
+.about-velora-link:hover {
+  opacity: 0.55;
+}
+
+@media (max-width: 768px) {
+  .about-velora {
+    padding: 75px 20px;
+  }
+
+  .about-velora-content h2 {
+    font-size: 42px;
+  }
+
+  .about-velora-content .about-intro {
+    font-size: 19px;
+  }
+
+  .about-velora-content .about-description {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
+
