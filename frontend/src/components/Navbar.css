@@ -1,0 +1,74 @@
+
+.announcement {
+    background: #242320;
+    color: #f8f6f2;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  
+  .navbar {
+    background: #faf9f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 6%;
+    border-bottom: 1px solid #e8e5df;
+  }
+  
+  .brand {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: #242320;
+    text-decoration: none;
+  }
+  
+  .nav-links,
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  
+  .navbar a {
+    color: #242320;
+    text-decoration: none;
+  }
+  
+  .nav-links a,
+  .nav-actions a {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  
+  .navbar a:hover {
+    color: #9c8774;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+  
+
+  .wishlist-nav-link {
+    color: #25231f;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+  
+  .wishlist-nav-link:hover {
+    color: #a66a70;
+  }
